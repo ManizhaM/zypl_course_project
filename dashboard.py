@@ -1,6 +1,5 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
 import plotly.express as px
 import pandas as pd
 from etl import load_data, load_data2, load_data3, load_data4, load_data5, load_data6
