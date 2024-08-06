@@ -38,6 +38,10 @@ def create_tables_and_insert_data(db_file):
     # Вывод результатов
     for row in result:
         print(row[0])
+        
+    with open('queries/views.sql', 'r') as file:
+        create_view = file.read()
+        conn.execute(create_view)
 
     conn.close()
 
