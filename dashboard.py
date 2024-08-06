@@ -97,7 +97,7 @@ block_4=html.Div(
 )
 
 dd5 = dcc.Dropdown(
-        id='year-dropdown',
+        id='year-dropdown2',
         options=[{'label': str(year), 'value': year} for year in range(2017, 2024)],
         value=2017,
    style={'margin-top':'20px', 'width':'45%', 'display':'inline-block',}
@@ -133,7 +133,7 @@ block_6 = html.Div(
     }
 )
 
-dd7 =  dd7 = dcc.RadioItems(
+dd7 = dcc.RadioItems(
             id='category-radio',
             options=[{'label': cat, 'value': cat} for cat in df6['product'].unique()],
             value=df6['product'].unique()[0],
@@ -235,7 +235,7 @@ def update_pie_chart(selected_market):
 
 @app.callback(
     Output('sales-count-heatmap', 'figure'),
-    [Input('year-dropdown', 'value')]
+    [Input('year-dropdown2', 'value')]
 )
 def update_heatmap(selected_year):
     # Создание тепловой карты
@@ -290,4 +290,4 @@ def update_histogram(selected_category):
     return fig
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0', port=10000, debug=True)
