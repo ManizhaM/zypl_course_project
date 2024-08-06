@@ -67,6 +67,7 @@ create table sales_domain (
     fiscal_year int,
     division varchar(255),
     segment varchar(255),
+    category varchar(255),
     variant varchar(255),
     platform varchar(255),
     channel varchar(255),
